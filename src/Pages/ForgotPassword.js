@@ -11,7 +11,7 @@ import {
   Button,
   Text,
   useToast,
-  HStack,
+  Spacer,
 } from '@chakra-ui/react';
 
 function ForgotPassword() {
@@ -41,7 +41,7 @@ function ForgotPassword() {
   };
 
   return (
-    <Flex align="center" justify="center" minHeight="100vh" bg="gray.50">
+    <Flex align="center" justify="center" minHeight="100vh" bg="#9f7aea">
       <Box
         width={{ base: '300px', md: '400px' }}
         p={6}
@@ -49,11 +49,11 @@ function ForgotPassword() {
         borderRadius="md"
         boxShadow="md"
       >
-        <Heading as="h5" mb={4} color="gray.800">
+        <Heading as="h5" mb={4} color="#9f7aea">
           Forgot Password
         </Heading>
         <FormControl>
-          <FormLabel>Email</FormLabel>
+          <FormLabel color="#9f7aea">Email</FormLabel>
           <Input
             type="email"
             placeholder="Email"
@@ -69,14 +69,15 @@ function ForgotPassword() {
             </Text>
           )}
         </FormControl>
-        <Button colorScheme="gray" onClick={handleForgotPassword}>
-          Reset Password
-        </Button>
-        <HStack marginTop="4">
+        <Flex marginTop="4">
           <Button colorScheme="blue">
             <NavLink to="/Login">Log in</NavLink>
           </Button>
-        </HStack>
+          <Spacer />
+          <Button colorScheme="gray" onClick={handleForgotPassword}>
+            Reset Password
+          </Button>
+        </Flex>
       </Box>
     </Flex>
   );

@@ -33,7 +33,7 @@ function SignUp() {
       return;
     }
 
-    if (!password || password.length < 6) {
+    if (!password || password.length < 4) {
       setPasswordError('Password must be at least 6 characters');
       return;
     }
@@ -53,22 +53,21 @@ function SignUp() {
     }
   };
   return (
-    <Flex
-      align="center"
-      justify="center"
-      minHeight="100vh"
-      bg="gray.50"
-      flexDirection={{ base: 'column', md: 'column', lg: 'row' }}
-      gap={{ base: '16px', md: '0', lg: '0' }}
-    >
-      <Box width={{ base: '300px', lg: '350px' }} p={6} bg="#9f7aea ">
-        <Heading as="h5" mb={4} color="white">
+    <Flex align="center" justify="center" minHeight="100vh" bg="#9f7aea">
+      <Box
+        width={{ base: '300px', lg: '350px' }}
+        p={6}
+        bg="#fff "
+        borderRadius="4"
+        boxShadow=" 0px 0px 20px rgba(0, 0, 0, 0.1)"
+      >
+        <Heading as="h5" mb={4} color="#9f7aea">
           Create Account
         </Heading>
         <FormControl>
-          <FormLabel color="white">User Name</FormLabel>
+          <FormLabel color="#9f7aea">User Name</FormLabel>
           <Input
-            color="white"
+            color="#9f7aea"
             type="text"
             placeholder="User Name"
             mb={2}
@@ -76,9 +75,9 @@ function SignUp() {
           />
         </FormControl>
         <FormControl isInvalid={emailError !== ''}>
-          <FormLabel color="white">Email</FormLabel>
+          <FormLabel color="#9f7aea">Email</FormLabel>
           <Input
-            color="white"
+            color="black"
             type="email"
             placeholder="Email"
             mb={2}
@@ -90,9 +89,9 @@ function SignUp() {
           )}
         </FormControl>
         <FormControl isInvalid={passwordError !== ''}>
-          <FormLabel color="white">Password</FormLabel>
+          <FormLabel color="#9f7aea">Password</FormLabel>
           <Input
-            color="white"
+            color="black"
             type="password"
             placeholder="Password"
             mb={4}
@@ -104,9 +103,9 @@ function SignUp() {
           )}
         </FormControl>
         <FormControl isInvalid={confirmPasswordError !== ''}>
-          <FormLabel color="white">Confirm Password</FormLabel>
+          <FormLabel color="#9f7aea">Confirm Password</FormLabel>
           <Input
-            color="white"
+            color="black"
             type="password"
             placeholder="Password"
             mb={4}
@@ -121,24 +120,14 @@ function SignUp() {
         )}
         <Center gap="10px">
           <Button
-            colorScheme="teal"
-            bg="white"
-            variant="outline"
+            colorScheme="purple"
+            bg="#9f7aea"
+            fontWeight="bold"
             onClick={handleCreteAccount}
           >
-            Create Account
+            Sign In
           </Button>
         </Center>
-      </Box>
-
-      <Box flexShrink={0} width={{ base: '300px', lg: '350px' }}>
-        <Image
-          src="https://media.istockphoto.com/id/998390080/photo/lavender-field-at-sunset.jpg?b=1&s=612x612&w=0&k=20&c=xQPcmOzI_lYLOKncyctQy1-u-ON1xqjORT6E3nB_4iQ="
-          alt="Login Image"
-          width="350px"
-          height="483px"
-          objectFit="cover"
-        />
       </Box>
     </Flex>
   );

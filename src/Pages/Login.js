@@ -32,7 +32,7 @@ function Login() {
       return;
     }
 
-    if (!password || password.length < 6) {
+    if (!password || password.length < 4) {
       setPasswordError('Password must be at least 6 characters');
       return;
     }
@@ -48,25 +48,26 @@ function Login() {
   };
 
   return (
-    <Flex
-      align="center"
-      justify="center"
-      minHeight="100vh"
-      bg="gray.50"
-      flexDirection={{ base: 'column', md: 'column', lg: 'row' }}
-      gap={{ base: '16px', md: '0', lg: '0' }}
-    >
-      <Box width={{ base: '300px', lg: '350px' }} p={6} bg="#9f7aea">
-        <Heading as="h5" mb={4} color="white">
+    <Flex align="center" justify="center" minHeight="100vh" bg="#9f7aea">
+      <Box
+        width={{ base: '300px', lg: '350px' }}
+        p={6}
+        bg="#fff"
+        borderRadius="4"
+        boxShadow=" 0px 0px 20px rgba(0, 0, 0, 0.1)"
+      >
+        <Heading as="h5" mb={4} color="#9f7aea" fontWeight="bold">
           Welcome Back to Pretty Login
         </Heading>
-        <Text fontSize="sm" color="gray.600" mb={4} color="white">
+        <Text fontSize="sm" mb={4} color="#9f7aea">
           It's great to have you back!
         </Text>
         <FormControl>
-          <FormLabel color="white">Email</FormLabel>
+          <FormLabel color="#9f7aea" fontWeight="bold">
+            Email
+          </FormLabel>
           <Input
-            color="white"
+            color="gray.700"
             type="email"
             placeholder="Email"
             mb={2}
@@ -74,6 +75,7 @@ function Login() {
             value={email}
             onChange={e => setEmail(e.target.value)}
             isInvalid={!!emailError}
+            _placeholder={{ color: 'gray.400' }}
           />
           {emailError && (
             <Text fontSize="sm" color="red.500">
@@ -82,9 +84,11 @@ function Login() {
           )}
         </FormControl>
         <FormControl>
-          <FormLabel color="white">Password</FormLabel>
+          <FormLabel color="#9f7aea" fontWeight="bold">
+            Password
+          </FormLabel>
           <Input
-            color="white"
+            color="gray.700"
             type="password"
             placeholder="Password"
             mb={4}
@@ -93,6 +97,7 @@ function Login() {
             value={password}
             onChange={e => setPassword(e.target.value)}
             isInvalid={!!passwordError}
+            _placeholder={{ color: 'gray.400' }}
           />
           {passwordError && (
             <Text fontSize="sm" color="red.500">
@@ -101,29 +106,26 @@ function Login() {
           )}
         </FormControl>
         <Flex align="center" justify="space-between" mb={4}>
-          <Checkbox color="white">Remember me</Checkbox>
-          <Link color="white" fontSize="sm">
+          <Checkbox color="#9f7aea" fontWeight="bold">
+            Remember me
+          </Checkbox>
+          <Link color="#9f7aea" fontSize="sm">
             <NavLink to="/ForgotPassword">Forgot Password?</NavLink>
           </Link>
         </Flex>
         <Center gap="10px">
-          <Button colorScheme="blue" onClick={handleLogin}>
+          <Button
+            colorScheme="purple"
+            bg="#9f7aea"
+            fontWeight="bold"
+            onClick={handleLogin}
+          >
             Log in
           </Button>
-          <Button colorScheme="teal" bg="white" variant="outline">
+          <Button color="#9f7aea" bg="white" variant="outline">
             <NavLink to="/">Create Account</NavLink>
           </Button>
         </Center>
-      </Box>
-
-      <Box flexShrink={0} width={{ base: '300px', lg: '350px' }}>
-        <Image
-          src="https://media.istockphoto.com/id/998390080/photo/lavender-field-at-sunset.jpg?b=1&s=612x612&w=0&k=20&c=xQPcmOzI_lYLOKncyctQy1-u-ON1xqjORT6E3nB_4iQ="
-          alt="Login Image"
-          width="350px"
-          height="435px"
-          objectFit="cover"
-        />
       </Box>
     </Flex>
   );

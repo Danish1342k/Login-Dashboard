@@ -74,7 +74,7 @@ function ForgotPassword() {
         </Button>
         <HStack marginTop="4">
           <Button colorScheme="blue">
-            <NavLink to="/">Log in</NavLink>
+            <NavLink to="/Login">Log in</NavLink>
           </Button>
         </HStack>
       </Box>
